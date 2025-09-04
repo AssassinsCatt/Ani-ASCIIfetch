@@ -38,6 +38,6 @@ func draw(file_name string, id int) {
   }
 
   time.Sleep(500 * time.Millisecond)
-  fmt.Print("\033[H\033[2J") 
+  fmt.Fprint(os.Stdout, "\x1b[H\x1b[2J\x1b[3J")
   draw(file_name, id+1)
 }
