@@ -4,6 +4,7 @@ import (
   "fmt"
   "time"
   "os"
+  "github.com/fatih/color"
 )
 
 func main() {
@@ -27,13 +28,13 @@ func draw(file_name string, id int) {
   file, err := os.ReadFile(path)
   
   if is_err(err) == false {
-    fmt.Println(string(file))
+    color.Green(string(file))
   }else{
     fmt.Print("\033[H\033[2J") 
     id = 1
     path := fmt.Sprintf("animations/%v/%v", file_name, id)
     file, _ := os.ReadFile(path)
-    fmt.Println(string(file))
+    color.Green(string(file))
   }
 
   time.Sleep(500 * time.Millisecond)
