@@ -27,7 +27,8 @@ func is_err (err error) bool{
 
 
 func draw(file_name string, id int) {
-  red, green, blue := 100, 0, 255
+  red, green, blue, fps := 100, 0, 255, 2
+  fps = 10/fps*100
 
   path := fmt.Sprintf("animations/%v/%v", file_name, id)
   
@@ -39,7 +40,7 @@ func draw(file_name string, id int) {
     print(red,green,blue,path)
   }
 
-  time.Sleep(500 * time.Millisecond)
+  time.Sleep(time.Duration(fps) * time.Millisecond)
   fmt.Fprint(os.Stdout, "\x1b[H\x1b[2J\x1b[3J")
   draw(file_name, id+1)
 }
