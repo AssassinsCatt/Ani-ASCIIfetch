@@ -1,7 +1,7 @@
 # meowfetch
-<h2>custom neofetch with animations</h2>
+custom neofetch with animations
 <br>
-<h2>in beta</h2>
+in beta
 
 <p>to use it as package, just download meowfetch.deb and in the same direktory open a terminal and type:</p>
 <p>sudo apt install meowfetch.deb</p>
