@@ -1,5 +1,5 @@
 # Ani ASCIIfetch
-custom neofetch with animations (and when i named it i did not know that there is already a reposetory with that name)
+custom neofetch with animations
 <br>
 in beta
 <br>
