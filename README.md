@@ -1,5 +1,5 @@
 # meowfetch
-custom neofetch with animations
+custom neofetch with animations (and when i named it i did not know that there is already a reposetory with that name)
 <br>
 in beta
 <br>
