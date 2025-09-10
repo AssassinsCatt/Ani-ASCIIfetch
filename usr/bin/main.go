@@ -5,8 +5,6 @@ import (
   "time"
   "os"
   "github.com/fatih/color"
-  "path/filepath"
-  "runtime"
   "errors"
   "github.com/yuin/gopher-lua"
 )
@@ -89,11 +87,9 @@ func print(red, green, blue int, path string) (err error) {
 
 
 
-func pathfinder(name string, id int) (path string) {
-  _, path, _, _ = runtime.Caller(0)
-  path = filepath.Dir(path)
-  file := fmt.Sprintf("../animations/%v/%v", name, id)
-  path = filepath.Join(path, file)
+func pathfinder(name string, id int) (file string) {
+  home, _ := os.UserHomeDir()
+  file = fmt.Sprintf("%v/.config/meowfetch/animations/%v/%v", home, name, id)
   return 
 }
 
@@ -108,8 +104,10 @@ func clear() {
 func read_config() (cfg Config) {
   L := lua.NewState()
   defer L.Close()
-
-  is_err(L.DoFile("config.lua"))
+  
+  home, _ := os.UserHomeDir()
+  file := fmt.Sprintf("%v/.config/meowfetch/config.lua", home)
+  is_err(L.DoFile(file))
   
   cfg = Config{}
   configTable := L.GetGlobal("config")
