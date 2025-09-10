@@ -1,3 +1,4 @@
 # meowfetch
-custom neofetch with animations
-in development
+<p>custom neofetch with animations</p>
+in beta
+
